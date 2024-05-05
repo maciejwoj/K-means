@@ -55,15 +55,15 @@ class KMeans:
         return cluster_index
 
 
-# Testowanie klasyfikatora KMeans
+
 if __name__ == "__main__":
-    k = int(input("Podaj liczbę klastrów: "))
+    k = int(input("Enter k: "))
     kmeans = KMeans(k)
     data = kmeans.load_data("iris.txt")
     kmeans.fit(data)
 
     while True:
-        new_vector = input("Podaj nowy wektor (sepal length, sepal width, petal length, petal width): ")
+        new_vector = input("Enter iris (sepal length, sepal width, petal length, petal width): ")
         new_vector = [float(x) for x in new_vector.split(',')]
         cluster = kmeans.predict(new_vector)
-        print("Wektor został przypisany do klastra:", cluster)
+        print("predinct cluster: ", cluster)
